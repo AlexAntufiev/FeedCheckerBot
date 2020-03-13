@@ -22,6 +22,8 @@ class FeedValidator {
         try {
             val feed = kotlinXmlMapper.readValue<Feed>(it)
 
+            feed.shop
+
             //TODO добвить проверки
 
         } catch (e: RuntimeException) {
