@@ -24,10 +24,12 @@ dependencies {
 
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.3.70")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.70")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.6.0")
 }
 
 tasks.test {
     useJUnitPlatform()
+
 }
 
 tasks.withType<KotlinCompile> {
