@@ -12,7 +12,7 @@ class FeedTest {
             ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "Your feed is valid")
+        assertEquals(validate, "shop must not be null")
     }
 
 }
