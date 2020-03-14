@@ -16,11 +16,18 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
     implementation("org.telegram:telegrambots:4.6")
+
     implementation("commons-io:commons-io:2.5")
+
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.10.3")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.10.3")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.10.3")
+
+    implementation("javax.validation:validation-api:2.0.1.Final")
+    implementation("org.hibernate.validator:hibernate-validator:6.1.2.Final")
+    implementation("org.glassfish:javax.el:3.0.0")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.3.70")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.70")
