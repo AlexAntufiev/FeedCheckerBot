@@ -18,7 +18,7 @@ class FeedCheckerBot(private val messageService: MessageService = MessageService
      * Returns the token of the bot to be able to perform Telegram Api Requests
      * @return Token of the bot
      */
-    override fun getBotToken() = "empty"
+    override fun getBotToken() = "944684075:AAGXspDgW9E83Lxh9z6YEfLFZWuHvrOKgWw"
 
     /**
      * This method is called when receiving updates via GetUpdates method
@@ -28,13 +28,17 @@ class FeedCheckerBot(private val messageService: MessageService = MessageService
         update?.message?.let {
 
             when {
-                it.document?.mimeType.equals("application/xml") -> {
-                    val fileText = downloadFile(execute(GetFile().setFileId(it.document?.fileId))).readText()
-                    val sendMessage = messageService.handle(fileText)
+                it.hasDocument() -> {
+                    if (it.document.mimeType == "application/xml") {
+                        val fileText = downloadFile(execute(GetFile().setFileId(it.document?.fileId))).readText()
+                        val sendMessage = messageService.handle(fileText)
 
-                    it.send(sendMessage)
+                        it.send(sendMessage)
+                    } else {
+                        it.send("Only xml file extension is supported")
+                    }
                 }
-                else -> it.send("Only xml file extension is supported")
+                else -> it.send("Send feed xml file to check!")
             }
         }
     }
