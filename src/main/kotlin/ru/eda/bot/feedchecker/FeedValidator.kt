@@ -37,7 +37,5 @@ class FeedValidator {
         } catch (e: RuntimeException) {
             "Unexpected error: ${e.localizedMessage}"
         }
-
-        return "Your feed is valid"
     }
 }
