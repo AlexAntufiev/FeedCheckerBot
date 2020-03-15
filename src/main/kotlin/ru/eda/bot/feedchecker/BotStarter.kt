@@ -10,12 +10,17 @@ object BotStarter {
     @JvmStatic
     fun main(args: Array<String>) {
 
+        if (args.size != 1) {
+            throw IllegalArgumentException("Token must be pass as first argument")
+        }
+
         ApiContextInitializer.init();
 
         val botsApi = TelegramBotsApi()
 
         try {
-            botsApi.registerBot(FeedCheckerBot())
+            val token = args[0]
+            botsApi.registerBot(FeedCheckerBot(token))
         } catch (e: TelegramApiException) {
             e.printStackTrace()
         }

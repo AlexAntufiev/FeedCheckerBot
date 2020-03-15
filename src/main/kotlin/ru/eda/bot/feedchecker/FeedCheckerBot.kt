@@ -8,7 +8,8 @@ import org.telegram.telegrambots.meta.api.objects.Update
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException
 
 
-class FeedCheckerBot(private val messageService: MessageService = MessageService()) : TelegramLongPollingBot() {
+class FeedCheckerBot(private val token: String,
+                     private val messageService: MessageService = MessageService()) : TelegramLongPollingBot() {
     /**
      * Return bot username of this bot
      */
@@ -18,7 +19,7 @@ class FeedCheckerBot(private val messageService: MessageService = MessageService
      * Returns the token of the bot to be able to perform Telegram Api Requests
      * @return Token of the bot
      */
-    override fun getBotToken() = "944684075:AAGXspDgW9E83Lxh9z6YEfLFZWuHvrOKgWw"
+    override fun getBotToken() = token
 
     /**
      * This method is called when receiving updates via GetUpdates method
