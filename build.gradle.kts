@@ -2,14 +2,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.3.61"
-    application
 }
 
 group = "ru.eda.bot"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
-
-
 
 repositories {
     mavenCentral()
@@ -37,14 +34,12 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.6.0")
 }
 
-task("stage").dependsOn("build", "clean")
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "ru.eda.bot.feedchecker.BotStarter"
+    }
 
-tasks.getByName("build") {
-    mustRunAfter("clean")
-}
-
-application {
-    mainClassName = "ru.eda.bot.feedchecker.BotStarter"
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
 }
 
 tasks.test {
