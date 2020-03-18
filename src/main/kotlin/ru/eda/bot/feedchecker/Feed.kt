@@ -2,7 +2,9 @@ package ru.eda.bot.feedchecker
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement
+import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Positive
 
 @JacksonXmlRootElement(localName = "yml_catalog")
 data class Feed(
@@ -37,7 +39,7 @@ class Currency
 class Category
 
 data class Offer(
-
+    @field:Positive
     @JacksonXmlProperty(localName = "id", isAttribute = true)
     val id: String?,
 
