@@ -12,7 +12,7 @@ class FeedOfferIdTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "id must be not empty")
+        assertEquals(validate, "id must exist")
     }
 
 }
