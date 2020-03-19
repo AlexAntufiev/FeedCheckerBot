@@ -18,23 +18,29 @@ data class Feed(
 
 data class Shop(
 
+    @field:NotBlank
     @JacksonXmlProperty(localName = "name")
     val name: String?,
 
+    @field:NotBlank
     @JacksonXmlProperty(localName = "company")
     val company: String?,
 
+    @field:NotBlank
     @JacksonXmlProperty(localName = "url")
     val url: String?,
 
+    @field:NotBlank
     @field:Valid
     @JacksonXmlProperty(localName = "currencies")
     val currencies: List<Currency>?,
 
+    @field:NotBlank
     @field:Valid
     @JacksonXmlProperty(localName = "categories")
     val categories: List<Category>?,
 
+    @field:NotBlank
     @field:Valid
     @JacksonXmlProperty(localName = "offers")
     val offers: List<Offer>?
@@ -49,11 +55,11 @@ data class Offer(
     @JacksonXmlProperty(localName = "id", isAttribute = true)
     val id: String?,
 
-    @field:NotEmpty
+    @field:NotBlank
     @JacksonXmlProperty(localName = "url")
     val url: String?,
 
-    @field:NotEmpty
+    @field:NotBlank
     @JacksonXmlProperty(localName = "categoryId")
     val categoryId: String?,
 

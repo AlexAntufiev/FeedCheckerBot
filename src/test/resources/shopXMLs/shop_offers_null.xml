@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2019-11-06 15:26">
+    <shop>
+
+        <name>123</name>
+        <company>qwe</company>
+        <url>https://stroicafe.ru/catalog</url>
+        <platform>Megagroup CMS-S3</platform>
+        <version>3.44</version>
+        <agency>Megagroup.ru</agency>
+
+        <currencies>
+            <currency id="RUB" rate="1"/>
+        </currencies>
+
+        <categories>
+            <category id="710076841">Распродажа</category>
+        </categories>
+
+
+    </shop>
+</yml_catalog>
