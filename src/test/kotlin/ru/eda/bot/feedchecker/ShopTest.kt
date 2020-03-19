@@ -102,7 +102,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.categories must not be blank")
+        assertEquals(validate, "must not be blank")
     }
 
     @Test

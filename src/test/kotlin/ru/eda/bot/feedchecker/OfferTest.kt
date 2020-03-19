@@ -48,7 +48,7 @@ class OfferTest {
     @Test
     fun offer_categoryId_textEmpty() {
 
-        val readText = this.javaClass.classLoader.getResource("offerXMLs/offer_categoryId_empty.xml")?.readText()
+        val readText = this.javaClass.classLoader.getResource("offerXMLs/offer_categoryId_textEmpty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
