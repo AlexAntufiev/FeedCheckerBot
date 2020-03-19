@@ -25,4 +25,24 @@ class OfferTest {
         assertEquals(validate, "shop.offers[0].id must not be blank")
     }
 
+    @Test
+    fun offer_url_textEmpty() {
+
+        val readText = this.javaClass.classLoader.getResource("offer_url_textEmpty.xml")?.readText()
+                ?: throw IllegalArgumentException("Path not found")
+        val validate = FeedValidator().validate(readText)
+
+        assertEquals(validate, "shop.offers[0].id must not be empty")
+    }
+
+    @Test
+    fun offer_categoryId_textEmpty() {
+
+        val readText = this.javaClass.classLoader.getResource("offer_id_empty.xml")?.readText()
+                ?: throw IllegalArgumentException("Path not found")
+        val validate = FeedValidator().validate(readText)
+
+        assertEquals(validate, "shop.offers[0].id must not be empty")
+    }
+
 }
