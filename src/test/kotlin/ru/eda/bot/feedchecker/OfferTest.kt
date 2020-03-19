@@ -42,7 +42,7 @@ class OfferTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.offers[0].id must not be empty")
+        assertEquals(validate, "shop.offers[0].categoryId must not be empty")
     }
 
 }
