@@ -12,7 +12,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.id must not be blank")
+        assertEquals(validate, "shop.name must not be blank")
     }
 
     @Test
@@ -22,7 +22,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.id must not be blank")
+        assertEquals(validate, "shop.name must not be blank")
     }
 
     @Test
@@ -32,7 +32,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.categoryId must not be blank")
+        assertEquals(validate, "shop.company must not be blank")
     }
 
     @Test
@@ -42,7 +42,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.url must not be blank")
+        assertEquals(validate, "shop.company must not be blank")
     }
 
     @Test
@@ -52,7 +52,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.categoryId must not be blank")
+        assertEquals(validate, "shop.url must not be blank")
     }
 
     @Test
@@ -72,7 +72,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.categoryId must not be blank")
+        assertEquals(validate, "shop.currencies must not be blank")
     }
 
     @Test
@@ -82,7 +82,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.url must not be blank")
+        assertEquals(validate, "shop.currencies must not be blank")
     }
 
     @Test
@@ -92,7 +92,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.categoryId must not be blank")
+        assertEquals(validate, "shop.categories must not be blank")
     }
 
     @Test
@@ -102,7 +102,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.url must not be blank")
+        assertEquals(validate, "shop.categories must not be blank")
     }
 
     @Test
@@ -112,7 +112,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.categoryId must not be blank")
+        assertEquals(validate, "shop[0].offers must not be blank")
     }
 
     @Test
@@ -122,7 +122,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.url must not be blank")
+        assertEquals(validate, "offers must not be blank")
     }
 
 
