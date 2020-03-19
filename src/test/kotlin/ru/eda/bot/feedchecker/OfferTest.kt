@@ -32,13 +32,13 @@ class OfferTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.offers[0].id must not be empty")
+        assertEquals(validate, "shop.offers[0].url must not be empty")
     }
 
     @Test
     fun offer_categoryId_textEmpty() {
 
-        val readText = this.javaClass.classLoader.getResource("offer_id_empty.xml")?.readText()
+        val readText = this.javaClass.classLoader.getResource("offer_categoryId_empty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
