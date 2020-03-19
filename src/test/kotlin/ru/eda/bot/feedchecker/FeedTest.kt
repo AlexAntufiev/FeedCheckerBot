@@ -15,24 +15,4 @@ class FeedTest {
         assertEquals(validate, "shop must not be null")
     }
 
-    @Test
-    fun testOfferIdNull() {
-
-        val readText = this.javaClass.classLoader.getResource("offerIdNullFail.xml")?.readText()
-                ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
-
-        assertEquals(validate, "id must exist")
-    }
-
-    @Test
-    fun testOfferIdEmpty() {
-
-        val readText = this.javaClass.classLoader.getResource("offerIdEmptyFail.xml")?.readText()
-                ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
-
-        assertEquals(validate, "id must be not empty")
-    }
-
 }

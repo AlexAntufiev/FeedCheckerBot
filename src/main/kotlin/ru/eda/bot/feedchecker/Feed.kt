@@ -4,6 +4,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement
 import javax.validation.Valid
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.NotNull
 
 @JacksonXmlRootElement(localName = "yml_catalog")
@@ -48,9 +49,11 @@ data class Offer(
     @JacksonXmlProperty(localName = "id", isAttribute = true)
     val id: String?,
 
+    @field:NotEmpty
     @JacksonXmlProperty(localName = "url")
     val url: String?,
 
+    @field:NotEmpty
     @JacksonXmlProperty(localName = "categoryId")
     val categoryId: String?,
 
