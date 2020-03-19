@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2019-11-06 15:26">
+    <shop>
+
+        <name>123</name>
+        <company>qwe</company>
+        <url>https://stroicafe.ru/catalog</url>
+        <platform>Megagroup CMS-S3</platform>
+        <version>3.44</version>
+        <agency>Megagroup.ru</agency>
+
+        <currencies>
+            <currency id="RUB" rate="1"/>
+        </currencies>
+
+        <categories>
+            <category id="710076841">Распродажа</category>
+        </categories>
+
+
+        <offers>
+            <offer id="" available="true">
+                <url>https://stroicafe.ru/oboi-pod-pokrasku/steklooboi/wellton/decor-fizalis-wd786</url>
+
+                <price>2565</price>
+                <currencyId>RUB</currencyId>
+
+                <categoryId>950996421</categoryId>
+                <categoryId>951082821</categoryId>
+                <categoryId>137403841</categoryId>
+                <categoryId>137434441</categoryId>
+                <categoryId>138596241</categoryId>
+                <categoryId>278975903</categoryId>
+                <categoryId>283401041</categoryId>
+                <categoryId>284930641</categoryId>
+                <categoryId>292474641</categoryId>
+                <categoryId>292476641</categoryId>
+                <categoryId>292477041</categoryId>
+                <categoryId>292486241</categoryId>
+                <categoryId>292492841</categoryId>
+                <categoryId>292503641</categoryId>
+                <categoryId>292505841</categoryId>
+                <categoryId>340693203</categoryId>
+                <categoryId>457303103</categoryId>
+                <categoryId>457304103</categoryId>
+                <categoryId>1147630821</categoryId>
+                <categoryId>1022155821</categoryId>
+
+                <picture>https://stroicafe.ru/d/wd-783-fizalis-wellton-decor-steklooboi.jpg</picture>
+                <picture>https://stroicafe.ru/d/wd-783-fizalis-wellton-decor-steklooboi1.jpg</picture>
+                <picture>https://stroicafe.ru/d/wd-783-fizalis-wellton-decor-steklooboi-v-interere.jpg</picture>
+                <picture>https://stroicafe.ru/d/wd-783-fizalis-wellton-decor-steklooboi-v-interere1.jpg</picture>
+                <picture>https://stroicafe.ru/d/wd-783-fizalis-wellton-decor-steklooboi-v-interere2.jpg</picture>
+                <picture>https://stroicafe.ru/d/Wellton_Decor_steklotkanevye_oboi_pod_pokrasku.jpg</picture>
+
+
+                <store>true</store>
+                <pickup>true</pickup>
+                <delivery>true</delivery>
+
+
+                <name>Стеклообои Wellton Decor Физалис WD783 Антивандальные под покраску 1*12,5м 175гр/м2</name>
+
+                <model>Wellton Decor WD783 Физалис</model>
+
+                <vendor>Wellton</vendor>
+                <vendorCode>WD783</vendorCode>
+
+                <description>Стеклотканевые обои под покраску Веллтон Декор WD783 Физалис для стен. Ширина-1м. Длина-12,5м.
+                    Плотность-175 гр/м2. Рапорт - 100см. Влагостойкие. Моющиеся. Рулонные. Цвет - белый. Материал основы - ткань.
+                    Материал покрытия – стекловолокно. Узор - . Производство Китай
+                </description>
+
+                <sales_notes>Заказ от 5т.р.-доставка по Екатеринбургу бесплатно</sales_notes>
+
+
+                <cpa>0</cpa>
+
+
+                <param name="Вес" unit="кг">2</param>
+
+                <param name="Тип товара">Стеклообои</param>
+                <param name="Страна-производитель">Китай</param>
+                <param name="Цвет">Белый</param>
+                <param name="Артикул">WD783</param>
+                <param name="Рисунок">Физалис</param>
+                <param name="Размер рулона">1.0*12.5</param>
+                <param name="Длина рулона">12.5 м</param>
+                <param name="Заметка для товара">Заказ от 5т.р.-доставка по Екатеринбургу бесплатно</param>
+
+            </offer>
+        </offers>
+
+    </shop>
+</yml_catalog>

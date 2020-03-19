@@ -20,33 +20,12 @@
 
 
         <offers>
-            <offer id=""
-                   available="true">
+            <offer id="123" available="true">
                 <url>https://stroicafe.ru/oboi-pod-pokrasku/steklooboi/wellton/decor-fizalis-wd786</url>
 
                 <price>2565</price>
                 <currencyId>RUB</currencyId>
 
-                <categoryId>950996421</categoryId>
-                <categoryId>951082821</categoryId>
-                <categoryId>137403841</categoryId>
-                <categoryId>137434441</categoryId>
-                <categoryId>138596241</categoryId>
-                <categoryId>278975903</categoryId>
-                <categoryId>283401041</categoryId>
-                <categoryId>284930641</categoryId>
-                <categoryId>292474641</categoryId>
-                <categoryId>292476641</categoryId>
-                <categoryId>292477041</categoryId>
-                <categoryId>292486241</categoryId>
-                <categoryId>292492841</categoryId>
-                <categoryId>292503641</categoryId>
-                <categoryId>292505841</categoryId>
-                <categoryId>340693203</categoryId>
-                <categoryId>457303103</categoryId>
-                <categoryId>457304103</categoryId>
-                <categoryId>1147630821</categoryId>
-                <categoryId>1022155821</categoryId>
 
                 <picture>https://stroicafe.ru/d/wd-783-fizalis-wellton-decor-steklooboi.jpg</picture>
                 <picture>https://stroicafe.ru/d/wd-783-fizalis-wellton-decor-steklooboi1.jpg</picture>

@@ -8,11 +8,21 @@ class FeedTest {
     @Test
     fun test() {
 
-        val readText = this.javaClass.classLoader.getResource("fail1.xml")?.readText()
+        val readText = this.javaClass.classLoader.getResource("feed/feed_shop_null.xml")?.readText()
             ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
         assertEquals(validate, "shop must not be null")
+    }
+
+    @Test
+    fun successTest() {
+
+        val readText = this.javaClass.classLoader.getResource("feed/success.xml")?.readText()
+            ?: throw IllegalArgumentException("Path not found")
+        val validate = FeedValidator().validate(readText)
+
+        assertEquals(validate, "Your feed is valid")
     }
 
 }
