@@ -65,4 +65,15 @@ class OfferTest {
         assertEquals(validate, "shop.offers[0].categoryId must not be blank")
     }
 
+
+    @Test
+    fun offer_name_size() {
+
+        val readText = this.javaClass.classLoader.getResource("offer/offer_name_size.xml")?.readText()
+            ?: throw IllegalArgumentException("Path not found")
+        val validate = FeedValidator().validate(readText)
+
+        assertEquals(validate, "shop.offers[0].name size must be between 1 and 50")
+    }
+
 }

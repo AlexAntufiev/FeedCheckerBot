@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class FeedTest {
 
     @Test
-    fun test() {
+    fun feed_shop_null() {
 
         val readText = this.javaClass.classLoader.getResource("feed/feed_shop_null.xml")?.readText()
             ?: throw IllegalArgumentException("Path not found")

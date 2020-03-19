@@ -6,6 +6,7 @@ import javax.validation.Valid
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Size
 
 @JacksonXmlRootElement(localName = "yml_catalog")
 data class Feed(
@@ -63,6 +64,7 @@ data class Offer(
     @JacksonXmlProperty(localName = "categoryId")
     val categoryId: String?,
 
+    @field:Size(min = 1, max = 50)
     @JacksonXmlProperty(localName = "name")
     val name: String?,
 
