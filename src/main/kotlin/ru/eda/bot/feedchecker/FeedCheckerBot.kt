@@ -26,6 +26,7 @@ class FeedCheckerBot(private val token: String,
      * @param update Update received
      */
     override fun onUpdateReceived(update: Update?) {
+        println("Get update: $update")
         update?.message?.let {
 
             when {
@@ -39,7 +40,10 @@ class FeedCheckerBot(private val token: String,
                         it.send("Only xml file extension is supported")
                     }
                 }
-                else -> it.send("Send feed xml file to check!")
+                else -> {
+                    println("Skip update handling")
+                    it.send("Send feed xml file to check!")
+                }
             }
         }
     }

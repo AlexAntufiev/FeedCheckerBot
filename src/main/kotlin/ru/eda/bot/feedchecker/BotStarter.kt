@@ -20,9 +20,11 @@ object BotStarter {
 
         try {
             val token = args[0]
+            println("Bot was starting...")
             botsApi.registerBot(FeedCheckerBot(token))
+            println("Bot started...")
         } catch (e: TelegramApiException) {
-            e.printStackTrace()
+            println("Problem with telegram: $e")
         }
     }
 }

@@ -21,6 +21,7 @@ class FeedValidator {
     }
 
     fun validate(it: String): String {
+        println("Validating text")
 
         return try {
             val feed = kotlinXmlMapper.readValue<Feed>(it)
@@ -30,6 +31,7 @@ class FeedValidator {
                 violation -> "${violation.propertyPath} ${violation.message}"
             }
 
+            println("Validated text")
             if (validate.isEmpty()) {
                 return "Your feed is valid"
             } else validate
