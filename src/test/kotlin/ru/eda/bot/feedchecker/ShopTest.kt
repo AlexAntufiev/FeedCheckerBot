@@ -66,33 +66,13 @@ class ShopTest {
     }
 
     @Test
-    fun shop_currencies_null() {
-
-        val readText = this.javaClass.classLoader.getResource("shop/shop_currencies_null.xml")?.readText()
-                ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
-
-        assertEquals(validate, "shop.currencies must not be blank")
-    }
-
-    @Test
     fun shop_currencies_textEmpty() {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_currencies_textEmpty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.currencies must not be blank")
-    }
-
-    @Test
-    fun shop_categories_null() {
-
-        val readText = this.javaClass.classLoader.getResource("shop/shop_categories_null.xml")?.readText()
-                ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
-
-        assertEquals(validate, "shop.categories must not be blank")
+        assertEquals(validate, "shop.currencies must not be empty")
     }
 
     @Test
@@ -102,17 +82,7 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.categories must not be blank")
-    }
-
-    @Test
-    fun shop_offers_null() {
-
-        val readText = this.javaClass.classLoader.getResource("shop/shop_offers_null.xml")?.readText()
-                ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
-
-        assertEquals(validate, "shop.offers must not be blank")
+        assertEquals(validate, "shop.categories must not be empty")
     }
 
     @Test
@@ -122,9 +92,6 @@ class ShopTest {
                 ?: throw IllegalArgumentException("Path not found")
         val validate = FeedValidator().validate(readText)
 
-        assertEquals(validate, "shop.offers must not be blank")
+        assertEquals(validate, "shop.offers must not be empty")
     }
-
-
-
 }
