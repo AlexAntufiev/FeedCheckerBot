@@ -30,17 +30,17 @@ data class Shop(
     @JacksonXmlProperty(localName = "url")
     val url: String?,
 
-    @field:NotBlank
+    @field:NotEmpty
     @field:Valid
     @JacksonXmlProperty(localName = "currencies")
     val currencies: List<Currency>?,
 
-    @field:NotBlank
+    @field:NotEmpty
     @field:Valid
     @JacksonXmlProperty(localName = "categories")
     val categories: List<Category>?,
 
-    @field:NotBlank
+    @field:NotEmpty
     @field:Valid
     @JacksonXmlProperty(localName = "offers")
     val offers: List<Offer>?
