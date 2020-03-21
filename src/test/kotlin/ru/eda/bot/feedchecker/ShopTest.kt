@@ -2,6 +2,8 @@ package ru.eda.bot.feedchecker
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import ru.eda.bot.feedchecker.service.FeedValidator
+import ru.eda.bot.feedchecker.service.TextParser
 
 class ShopTest {
 
@@ -10,9 +12,11 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_name_null.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.name must not be blank")
+        assertEquals("must not be blank:\n" +
+            "    shop.name", validate)
     }
 
     @Test
@@ -20,9 +24,11 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_name_textEmpty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.name must not be blank")
+        assertEquals("must not be blank:\n" +
+            "    shop.name", validate)
     }
 
     @Test
@@ -30,9 +36,11 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_company_null.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.company must not be blank")
+        assertEquals("must not be blank:\n" +
+            "    shop.company", validate)
     }
 
     @Test
@@ -40,9 +48,11 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_company_textEmpty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.company must not be blank")
+        assertEquals("must not be blank:\n" +
+            "    shop.company", validate)
     }
 
     @Test
@@ -50,9 +60,11 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_url_null.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.url must not be blank")
+        assertEquals("must not be blank:\n" +
+            "    shop.url", validate)
     }
 
     @Test
@@ -60,9 +72,11 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_url_textEmpty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.url must not be blank")
+        assertEquals("must not be blank:\n" +
+            "    shop.url", validate)
     }
 
     @Test
@@ -70,9 +84,11 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_currencies_textEmpty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.currencies must not be empty")
+        assertEquals("must not be empty:\n" +
+            "    shop.currencies", validate)
     }
 
     @Test
@@ -80,9 +96,11 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_categories_textEmpty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.categories must not be empty")
+        assertEquals("must not be empty:\n" +
+            "    shop.categories", validate)
     }
 
     @Test
@@ -90,8 +108,10 @@ class ShopTest {
 
         val readText = this.javaClass.classLoader.getResource("shop/shop_offers_textEmpty.xml")?.readText()
                 ?: throw IllegalArgumentException("Path not found")
-        val validate = FeedValidator().validate(readText)
+        val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
+        val validate = FeedValidator.validate(feed)
 
-        assertEquals(validate, "shop.offers must not be empty")
+        assertEquals("must not be empty:\n" +
+            "    shop.offers", validate)
     }
 }
