@@ -7,6 +7,7 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage
 import org.telegram.telegrambots.meta.api.objects.Message
 import org.telegram.telegrambots.meta.api.objects.Update
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException
+import ru.eda.bot.feedchecker.service.HttpClient
 import ru.eda.bot.feedchecker.service.MessageService
 
 
@@ -28,22 +29,31 @@ class FeedCheckerBot(private val token: String) : TelegramLongPollingBot() {
      */
     override fun onUpdateReceived(update: Update?) {
         println("Get update: $update")
-        update?.message?.let {
+        update?.message?.let { message ->
 
             when {
-                it.hasDocument() -> {
-                    if (it.document.mimeType == "application/xml") {
-                        val fileText = downloadFile(execute(GetFile().setFileId(it.document?.fileId))).readText()
+                message.hasDocument() -> {
+                    if (message.document.mimeType == "application/xml") {
+                        val fileText = downloadFile(execute(GetFile().setFileId(message.document?.fileId))).readText()
                         val sendMessages = MessageService.handle(fileText)
 
-                        it.send(sendMessages)
+                        message.send(sendMessages)
                     } else {
-                        it.send("Only xml file extension is supported")
+                        message.send("Meow! Only xml file extension is supported")
                     }
+                }
+                message.hasText() -> {
+
+
+                    val sendMessages = HttpClient.request(message.text)
+                        ?.let { MessageService.handle(it) }
+                        ?: listOf("Meow! Can't get data from url")
+
+                    message.send(sendMessages)
                 }
                 else -> {
                     println("Skip update handling")
-                    it.send("Send feed xml file to check!")
+                    message.send("Meow! Send URL or xml file with feed to check!")
                 }
             }
         }
