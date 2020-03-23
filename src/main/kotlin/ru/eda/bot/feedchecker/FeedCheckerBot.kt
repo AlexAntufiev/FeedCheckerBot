@@ -36,6 +36,7 @@ class FeedCheckerBot(private val messageService: MessageService = MessageService
                         it.send(sendMessage)
                     } else {
                         it.send("Only xml file extension is supported")
+                        it.send("Only xml file extension is supported")
                     }
                 }
                 else -> it.send("Send feed xml file to check!")
