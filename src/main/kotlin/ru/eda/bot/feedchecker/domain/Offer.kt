@@ -18,7 +18,7 @@ data class Offer(
     @JacksonXmlProperty(localName = "categoryId")
     val categoryId: String?,
 
-    @field:Size(min = 1, max = 50)
+    @field:Size(min = 1, max = 30)
     @JacksonXmlProperty(localName = "name")
     val name: String?,
 

@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Update
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException
 import ru.eda.bot.feedchecker.service.HttpClient
 import ru.eda.bot.feedchecker.service.MessageService
+import java.net.URL
 
 
 class FeedCheckerBot(private val token: String) : TelegramLongPollingBot() {
@@ -44,12 +45,14 @@ class FeedCheckerBot(private val token: String) : TelegramLongPollingBot() {
                 }
                 message.hasText() -> {
 
-
-                    val sendMessages = HttpClient.request(message.text)
-                        ?.let { MessageService.handle(it) }
-                        ?: listOf("Meow! Can't get data from url")
-
-                    message.send(sendMessages)
+                    runCatching { URL(message.text) }
+                        .onSuccess {
+                            message.send(
+                                HttpClient.request(message.text)
+                                    ?.let { MessageService.handle(it) }
+                                    ?: listOf("Meow! Can't get data from url"))
+                        }
+                        .onFailure { message.send(listOf("Meow! Text from message isn't url")) }
                 }
                 else -> {
                     println("Skip update handling")
