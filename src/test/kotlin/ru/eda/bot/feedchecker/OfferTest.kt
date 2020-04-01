@@ -98,7 +98,7 @@ class OfferTest {
         val feed = TextParser.parse(readText) ?: throw IllegalArgumentException("Can't parse")
         val validate = FeedValidator.validate(feed)
 
-        assertEquals("size must be between 1 and 50:\n" +
+        assertEquals("size must be between 1 and 30:\n" +
             "    shop.offers.name in 1 offers:\n" +
             "        Offer ids: 343\n", validate)
     }

@@ -22,6 +22,8 @@ internal class StatisticsServiceTest {
             Vendors: 5
             Parameters in offer:  9
             Articles:  8
+            TypePrefixes:  0
+            Models:  10
         """.trimIndent())
     }
 }

@@ -65,7 +65,7 @@ object FeedValidator {
         feedSequence.filterTo(others) { it.id.isNullOrBlank() and it.url.isNullOrBlank() and it.name.isNullOrBlank() }
 
         val idsMessage = if (ids.isNotEmpty())
-            "        Offer ids: ${ids.joinToString { "${it.id}" }}\n" else ""
+            "        Offer ids: ${ids.joinToString() { "${it.id}" }}\n" else ""
         val urlsMessage = if (urls.isNotEmpty())
             "        Offer urls: ${urls.joinToString { "${it.url?.trimIndent()}" }}\n" else ""
         val namesMessage = if (names.isNotEmpty())
